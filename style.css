@@ -76,7 +76,7 @@ body {
 img { width: 100%; height: auto; }
 
 a:link {
-    color: wheat
+    color: wheat;
     background-color: transparent;
     text-decoration: none;
   }
