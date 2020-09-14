@@ -1,52 +1,79 @@
-/* see https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-.container {
-    display: flex;
-    flex-flow: row wrap; /* we'll wrap */
+
+* {
+  box-sizing: border-box;
 }
 
-.header, .blog, .sidebar, .footer {
-    flex: 1 100%;
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #dedcdd;
 }
 
+/* Header/Blog Title */
 .header {
-    background: #CC9752;
-    text-align: center;
-    color: #38251e;
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background:#b9897f
 }
 
-.sidebar {
-    background: #E5DBCF;
-    padding: 10px;
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
 }
 
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+
+
+
+/* Add a card effect for articles */
+.card {
+    background: #77575a;
+    padding: 20px;
+    margin-top: 20px;
+    color:wheat;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
 .footer {
-    background: #203e6b;
-    padding: 10px;
-    text-align: center;
-    color: wheat;
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
 }
 
-.blog {
-    background: #38251e;
-    padding: 10px;
-    color: pink;
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
 }
 
 img { width: 100%; height: auto; }
-
-/* medium screen */
-@media all and (min-width: 600px) {
-    /* if screen > 600px sidebar appears alongside blog getting 1/3rd of space */
-  .blog { flex: 2 0px; }
-  .sidebar { flex: 1 0px; }
-}
-
-/* Large screens */
-@media all and (min-width: 800px) {
-  /* On bigger screens, sidebar now only gets 1/4 of space */
-  .blog { flex: 3 0px; }
-  .sidebar { flex: 1 0px; }
-}
 
 a:link {
     color: rgb(14, 95, 14);
@@ -54,7 +81,25 @@ a:link {
     text-decoration: none;
   }
   a:visited {
-    color: wheat;
+    color: pink;
     background-color: transparent;
     text-decoration: none;
   }
+
+  h4,h3{
+    margin:0;
+    padding:0;
+    }
+
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+      }
+      .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width:100%;
+        max-height: 100%;
+      }
