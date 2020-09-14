@@ -1,0 +1,60 @@
+/* see https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+.container {
+    display: flex;
+    flex-flow: row wrap; /* we'll wrap */
+}
+
+.header, .blog, .sidebar, .footer {
+    flex: 1 100%;
+}
+
+.header {
+    background: #CC9752;
+    text-align: center;
+    color: #38251e;
+}
+
+.sidebar {
+    background: #E5DBCF;
+    padding: 10px;
+}
+
+.footer {
+    background: #203e6b;
+    padding: 10px;
+    text-align: center;
+    color: wheat;
+}
+
+.blog {
+    background: #38251e;
+    padding: 10px;
+    color: pink;
+}
+
+img { width: 100%; height: auto; }
+
+/* medium screen */
+@media all and (min-width: 600px) {
+    /* if screen > 600px sidebar appears alongside blog getting 1/3rd of space */
+  .blog { flex: 2 0px; }
+  .sidebar { flex: 1 0px; }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  /* On bigger screens, sidebar now only gets 1/4 of space */
+  .blog { flex: 3 0px; }
+  .sidebar { flex: 1 0px; }
+}
+
+a:link {
+    color: rgb(14, 95, 14);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: wheat;
+    background-color: transparent;
+    text-decoration: none;
+  }
